@@ -36,45 +36,45 @@ flowchart LR
     bu_prod["bu_prod"]
     team_finance["team_finance"]
     team_hr["team_hr"]
-    Schema_Dev["`Schema
-                 Database`"]
-    Schema_Test["`Schema
-                 Database`"]
-    Schema_Prod["`Schema
-                  Database`"]
-    Schema_Bu_Dev["`Schema
-                    Database`"]
-    Schema_Bu_Test["`Schema
-                     Database`"]
-    Schema_Bu_Prod["`Schema
-                     Database`"]
-    Schema_Team_Finance["`Schema
-                         Database`"]
-    Schema_Team_HR["`Schema
-                     Database`"]
-    table_dev["`Tables/
-                Views`"]
-    table_test["`Tables/
-                 Views`"]
-    table_prod["`Tables/
-                  Views`"]
-    table_bu_dev["`Tables/
-                   Views`"]
-    table_bu_test["`Tables/
-                    Views`"]
-    table_bu_prod["`Tables/
-                    Views`"]
-    table_team_finance["`Tables/
-                        Views`"]
-    table_team_hr["`Tables/
-                    Views`"]
+    Schema_Dev["Schema
+                 Database"]
+    Schema_Test["Schema
+                 Database"]
+    Schema_Prod["Schema
+                  Database"]
+    Schema_Bu_Dev["Schema
+                    Database"]
+    Schema_Bu_Test["Schema
+                     Database"]
+    Schema_Bu_Prod["Schema
+                     Database"]
+    Schema_Team_Finance["Schema
+                         Database"]
+    Schema_Team_HR["Schema
+                     Database"]
+    table_dev["Tables/
+                Views"]
+    table_test["Tables/
+                 Views"]
+    table_prod["Tables/
+                  Views"]
+    table_bu_dev["Tables/
+                   Views"]
+    table_bu_test["Tables/
+                    Views"]
+    table_bu_prod["Tables/
+                    Views"]
+    table_team_finance["Tables/
+                        Views"]
+    table_team_hr["Tables/
+                    Views"]
 
-    SDLC["`Across SDLC
-           evnironments scopes`"]
-    BU["`Across Business Units
-         scopes`"]
-    Sandbox["`Across Teams
-              Sandbox`"]
+    SDLC["Across SDLC
+           evnironments scopes"]
+    BU["Across Business Units
+         scopes"]
+    Sandbox["Across Teams
+              Sandbox"]
     Header --> dev
     Header --> test
     Header --> prod
