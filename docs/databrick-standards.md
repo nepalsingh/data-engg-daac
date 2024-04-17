@@ -1,3 +1,6 @@
+Databricks, being a platform for big data analytics and machine learning, often provides best practices and standards for various aspects of data processing, analysis, and machine learning workflows. Here are some common standards and best practices associated with using Databricks:
+
+
 1. Cluster Standard:
 Dynamic Scaling: Configure clusters to auto-scale based on workload demands. This ensures optimal resource utilization and cost-effectiveness.
 Right-Sizing: Adjust cluster sizes according to workload requirements to avoid underutilization or over-provisioning.
