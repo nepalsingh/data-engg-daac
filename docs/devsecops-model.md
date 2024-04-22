@@ -34,3 +34,41 @@ Documentation:
 
 Security Documentation: Document security policies, procedures, and configurations to provide guidance for developers, administrators, and auditors.
 By integrating these practices into your DevSecOps model, you can build a secure and resilient environment for Databricks, Azure Data Factory, and Power BI, ensuring that security is not an afterthought but an integral part of the development and operations process.
+
+
+          +----------------------------------------+
+          |             GitHub Repository          |
+          |        (Code, Policies, Secrets)       |
+          +------------------+---------------------+
+                             |
+                             | Code Changes (Push)
+                             |
+                             v
+          +------------------+---------------------+
+          |         GitHub Actions Workflows      |
+          |   (CI/CD, Security Scanning, Tests)   |
+          +------------------+---------------------+
+                             |
+                             | Build, Test, Deploy
+                             |
+                             v
+          +------------------+---------------------+
+          |              Databricks                |
+          |          (Data Processing)             |
+          +------------------+---------------------+
+                             |
+                             | Data Processing Jobs
+                             |
+                             v
+          +------------------+---------------------+
+          |          Azure Data Factory           |
+          |      (Data Orchestration, ETL)        |
+          +------------------+---------------------+
+                             |
+                             | Data Pipelines
+                             |
+                             v
+          +------------------+---------------------+
+          |               Power BI                 |
+          |          (Data Visualization)          |
+          +----------------------------------------+
