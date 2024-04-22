@@ -1,0 +1,10 @@
+name: 'this build of document '
+on: [push]
+# add git hub actions
+
+jobs:
+  name: 'reusableWorkflowCallJob'
+  runs_on: latest_ubuntu
+  steps:
+    name: main doc
+    run: ls -ltr
