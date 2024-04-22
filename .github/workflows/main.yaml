@@ -3,8 +3,8 @@ on: [push]
 # add git hub actions
 
 jobs:
-  name: 'reusableWorkflowCallJob'
-  runs_on: latest_ubuntu
-  steps:
-    name: main doc
-    run: ls -ltr
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: main doc
+        run: ls -ltr
