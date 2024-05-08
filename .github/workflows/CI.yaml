@@ -1,0 +1,36 @@
+# create workflow yaml for import databricks notebook using databricks CLI
+name: Import Notebook
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  import_notebook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install Databricks CLI
+        run: |
+          pip install databricks-cli
+
+      - name: Import Notebook
+        run: |
+          databricks workspace import -l PYTHON -f /path/to/notebook.py /Users/nepalsingh/Desktop/warea/lab/data-engineering/data-engg-daac/notebooks
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "Your Name"
+          git config --global user.email "your-email@example.com"
+          git add .
+          git commit -m "Import notebook"
+          git push
