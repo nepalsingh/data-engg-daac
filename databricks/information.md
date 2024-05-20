@@ -9,7 +9,6 @@ Powered by Delta Sharing
 ## Capability Chart
 ![Capability Chart](./images/capability-chart.png)
 
-
 ![Apache-ranger](./images/image.png)
 
 ## Unity-enabled jobs
