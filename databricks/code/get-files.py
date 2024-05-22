@@ -31,13 +31,19 @@ def get_files(directory):
         print(dir)
 
 
-def call_databricks_api(directories: list, files: list):
+async def call_databricks_api(directories: list, files: list):
     # set the databricks token
     token = os.getenv('DATABRICKS_TOKEN')
     # set the databricks host
     host = os.getenv('DATABRICKS_HOST')
     # set the databricks cluster id
     cluster_id = os.getenv('DATABRICKS_CLUSTER_ID')
+
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    }
 
     # set the databricks api url
     mkdir_url = f'https://{host}/api/2.0/workspace/mkdirs'
@@ -46,15 +52,13 @@ def call_databricks_api(directories: list, files: list):
         # set the databricks api url
         mkdir_url = f'https://{host}/api/2.0/workspace/mkdirs'
         # set the databricks headers
-        headers = {
-            'Authorization': f'Bearer {token}'
-        }
+
         # set the databricks payload
         payload = {
             'path': dir
         }
         # call the databricks api
-        response = requests.post(mkdir_url, headers=headers, json=payload)
+        response = await requests.post(mkdir_url, headers=headers, json=payload)
         # print the response
         print(response.json())
 
@@ -73,10 +77,9 @@ def call_databricks_api(directories: list, files: list):
         }
 
         # call the databricks api
-        response = requests.post(import_url, headers=headers, json=payload)
+        response = await requests.post(import_url, headers=headers, json=payload)
         # print the response
         print(response.json())
-
 
     #
 get_files('.')
