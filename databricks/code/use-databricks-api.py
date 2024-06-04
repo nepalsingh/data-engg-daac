@@ -12,7 +12,8 @@ databrickshost = os.getenv('DATABRICKS_HOST')
 databricks_token = os.getenv('DATABRICKS_TOKEN')
 # databricks_cluster_id = os.getenv('DATABRICKS_CLUSTER_ID')
 
-api = DatabricksAPI(host=databrickshost, token=databricks_token)
+api = DatabricksAPI(host=databrickshost, token=databricks_token,
+                    api_version=2.0, TimeoutError=120)
 
 get_cluster = api.cluster_list()
 print(get_cluster)
