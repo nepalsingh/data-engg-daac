@@ -13,12 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Azure CLI
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      # - name: Set up Azure CLI
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Deploy Azure Data Factory
-        run: |
-          az group create --name myResourceGroup --location "East US"
-          az deployment group create --resource-group myResourceGroup --template-file path/to/your/template.json --parameters path/to/your/parameters.json
+      # - name: Deploy Azure Data Factory
+      #   run: |
+      #     az group create --name myResourceGroup --location "East US"
+      #     az deployment group create --resource-group myResourceGroup --template-file path/to/your/template.json --parameters path/to/your/parameters.json
