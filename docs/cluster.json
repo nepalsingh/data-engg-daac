@@ -1,0 +1,88 @@
+{
+  "cluster_policy_name": "Job Cluster Policy with ADLS",
+  "policy": {
+    "spark_version": {
+      "type": "fixed",
+      "value": "7.3.x-scala2.12"
+    },
+    "node_type_id": {
+      "type": "fixed",
+      "value": "Standard_D3_v2"
+    },
+    "num_workers": {
+      "type": "range",
+      "minValue": 1,
+      "maxValue": 10,
+      "defaultValue": 3
+    },
+    "autoscale": {
+      "type": "fixed",
+      "value": {
+        "min_workers": 1,
+        "max_workers": 10
+      }
+    },
+    "spark_conf": {
+      "type": "object",
+      "properties": {
+        "spark.executor.memory": {
+          "type": "fixed",
+          "value": "4g"
+        },
+        "spark.executor.cores": {
+          "type": "fixed",
+          "value": "2"
+        },
+        "spark.driver.memory": {
+          "type": "fixed",
+          "value": "4g"
+        },
+        "spark.driver.cores": {
+          "type": "fixed",
+          "value": "2"
+        },
+        "spark.sql.shuffle.partitions": {
+          "type": "fixed",
+          "value": "200"
+        },
+        "spark.hadoop.fs.azure.account.auth.type.<storage-account-name>.dfs.core.windows.net": {
+          "type": "fixed",
+          "value": "OAuth"
+        },
+        "spark.hadoop.fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net": {
+          "type": "fixed",
+          "value": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider"
+        },
+        "spark.hadoop.fs.azure.account.oauth2.client.id.<storage-account-name>.dfs.core.windows.net": {
+          "type": "fixed",
+          "value": "<client-id>"
+        },
+        "spark.hadoop.fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net": {
+          "type": "fixed",
+          "value": "<client-secret>"
+        },
+        "spark.hadoop.fs.azure.account.oauth2.client.endpoint.<storage-account-name>.dfs.core.windows.net": {
+          "type": "fixed",
+          "value": "https://login.microsoftonline.com/<tenant-id>/oauth2/token"
+        }
+      }
+    },
+    "azure_attributes": {
+      "type": "object",
+      "properties": {
+        "availability": {
+          "type": "fixed",
+          "value": "ON_DEMAND_AZURE"
+        }
+      }
+    },
+    "instance_pool_id": {
+      "type": "fixed",
+      "value": "<INSTANCE_POOL_ID>"
+    },
+    "runtime_engine": {
+      "type": "fixed",
+      "value": "STANDARD"
+    }
+  }
+}
