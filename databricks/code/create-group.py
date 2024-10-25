@@ -1,8 +1,12 @@
 import requests
 import json
 
+# vaye
+
+
 # Databricks workspace details
-DATABRICKS_INSTANCE = '<databricks-instance-url>'  # e.g., https://<databricks-instance>.cloud.databricks.com
+# e.g., https://<databricks-instance>.cloud.databricks.com
+DATABRICKS_INSTANCE = '<databricks-instance-url>'
 TOKEN = '<your-databricks-token>'
 API_URL = f"{DATABRICKS_INSTANCE}/api/2.0/preview/scim/v2/Groups"
 
@@ -13,6 +17,8 @@ HEADERS = {
 }
 
 # Create a new group
+
+
 def create_group(group_name):
     data = {
         "displayName": group_name
@@ -24,6 +30,8 @@ def create_group(group_name):
         print(f"Error creating group: {response.text}")
 
 # Add a user to the group
+
+
 def add_user_to_group(group_id, user_id):
     data = {
         "schemas": ["urn:ietf:params:scim:schemas:core:2.0:PatchOp"],
@@ -39,13 +47,16 @@ def add_user_to_group(group_id, user_id):
             }
         ]
     }
-    response = requests.patch(f"{API_URL}/{group_id}", headers=HEADERS, data=json.dumps(data))
+    response = requests.patch(
+        f"{API_URL}/{group_id}", headers=HEADERS, data=json.dumps(data))
     if response.status_code == 200:
         print(f"User '{user_id}' added to group '{group_id}' successfully.")
     else:
         print(f"Error adding user: {response.text}")
 
 # List all groups
+
+
 def list_groups():
     response = requests.get(API_URL, headers=HEADERS)
     if response.status_code == 200:
@@ -55,6 +66,7 @@ def list_groups():
             print(group['displayName'], "ID:", group['id'])
     else:
         print(f"Error fetching groups: {response.text}")
+
 
 # Example usage
 if __name__ == "__main__":

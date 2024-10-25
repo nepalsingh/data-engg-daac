@@ -1,0 +1,50 @@
+<div x-data="databricksGroups()">
+  <button @click="fetchGroups">Fetch Groups</button>
+
+  <ul>
+    <template x-for="group in groups" :key="group.group_name">
+      <li x-text="group.group_name"></li>
+    </template>
+  </ul>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script>
+  function databricksGroups() {
+    return {
+      groups: [],
+      instance: null,
+      token: null,
+
+      async fetchConfig() {
+        const response = await fetch('/api/databricks-config')
+        const config = await response.json()
+        this.instance = config.instance
+        this.token = config.token
+      },
+
+      async fetchGroups() {
+        if (!this.instance || !this.token) await this.fetchConfig()
+
+        try {
+          const response = await fetch(`${this.instance}/api/2.0/groups/list`, {
+            method: 'GET',
+            headers: {
+              Authorization: `Bearer ${this.token}`,
+              'Content-Type': 'application/json',
+            },
+          })
+
+          if (!response.ok) {
+            throw new Error(`Error: ${response.statusText}`)
+          }
+
+          const data = await response.json()
+          this.groups = data.group_names // Adjust based on API response structure
+        } catch (error) {
+          console.error('Failed to fetch groups:', error)
+        }
+      },
+    }
+  }
+</script>
