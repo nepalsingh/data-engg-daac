@@ -40,8 +40,9 @@
           <span class="sr-only">Loading...</span>
         </div>
         <div class="row justify-content-center">
+          <span x-text="data"></span>
         <ul class="list-group">
-          <template x-for="book in data" :key="book.id">
+          <template x-for="group in data" :key="group.group_name">
             <li x-text="book.title" class="list-group-item"  ></li>
           </template>
         </ul>
