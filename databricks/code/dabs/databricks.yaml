@@ -1,6 +1,4 @@
-# create databricks asset bundle
-# deploy notebooks
+# # create databricks asset bundle
 
-bundle: de
-
-resources:
+bundle:
+  name: new
