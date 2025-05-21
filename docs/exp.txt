@@ -26,3 +26,55 @@ CI/CD with GitHub Actions: Developed CI/CD pipelines using GitHub Actions to aut
 Incremental Load Solutions: Designed dual approaches for incremental ingestion — via Change Data Capture (CDC) and last modified timestamps, improving data reliability and latency.
 
 Operational Excellence: Ensured performance, scalability, and maintainability of pipelines through proper design patterns and system observability.
+
+
+
+Professional Summary
+Seasoned data and cloud engineering leader with 20+ years of experience architecting and operating enterprise-scale data platforms across Azure, AWS, and hybrid environments. Deep expertise in Databricks, Apache Spark, Snowflake, and data governance solutions like Unity Catalog. Proven ability to modernize legacy systems, lead multi-million-dollar initiatives, and mentor high-performing teams in financial, e-commerce, and government sectors.
+
+Core Competencies
+Cloud & Data Platforms: Azure, AWS, GCP, Databricks, Snowflake, Hadoop, Cloudera
+
+Data Engineering: PySpark, Kafka, Airflow, Data Factory, Glue, Redshift, RDS, DynamoDB
+
+Governance & Catalogs: Unity Catalog, Lakehouse, CI/CD, Terraform, Ansible
+
+Database Technologies: Oracle, MS SQL Server, PostgreSQL, MongoDB, Elasticsearch
+
+BI & Reporting: Tableau, Power BI, MicroStrategy, SSRS
+
+DevOps & Automation: GitHub Actions, Terraform, Ansible, CloudFormation, Python
+
+Leadership: Team management (10+), Budgeting ($4.5M), Vendor Relations, Strategy
+
+Domains: Financial Services, Supply Chain, E-commerce, Government Cloud
+
+Key Accomplishments
+Led migration of Cloudera Hadoop workloads to Azure Databricks for Capital Group, improving SLA performance by 40%.
+
+Architected Unity Catalog deployment across multiple environments to enable fine-grained access control and DR readiness.
+
+Built CI/CD pipelines for Databricks and Azure Data Factory using GitHub Actions for a federal cloud modernization initiative.
+
+Designed automation frameworks for schema/table/volume provisioning, reducing manual effort by 80%.
+
+Managed $4.5M budget and cut costs by $632K through IT consolidation, licensing, and hardware optimization.
+
+Supported multi-cloud environments and built cross-platform pipelines integrating Redshift, Snowflake, and Data Lakes.
+
+Recent Roles
+AFS (2024 – Present)
+Lead Data Engineer / Databricks Admin
+
+Databricks administration, CI/CD, Unity Catalog architecture, Azure migration strategy
+
+Edward Jones (Jan 2024 – Feb 2024)
+Data Engineer / Databricks Admin
+
+Region-based Unity Catalog setup, medallion architecture design, DR planning
+
+Capital Group (2018 – 2024)
+Data Engineer / Cloud Architect
+
+CDH to Databricks migration, Snowflake-based analytics, data governance, Terraform automation
+
