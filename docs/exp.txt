@@ -1,0 +1,28 @@
+Recent Experience – Edward Jones & AFS (Past Year)
+Role: Databricks Admin | Cloud Data Architect (Azure)
+
+Edward Jones
+Databricks Environment Optimization: Administered and fine-tuned Databricks on Azure, enabling secure and scalable analytics operations.
+
+Unity Catalog Implementation: Architected Databricks Unity Catalog across regions, including Metastore setup in Azure Data Lake and disaster recovery (DR) strategies for Metastore protection.
+
+Governance & Architecture: Played a key role in building a data governance framework, ensuring data integrity and compliance with centralized controls.
+
+Medallion Architecture Framework: Developed and enforced a medallion-layer architecture to streamline and standardize data pipeline development.
+
+Infrastructure as Code (IaC): Leveraged Terraform modules for cluster management and eliminated manual configurations, promoting repeatability and stability.
+
+Security & Access Control: Managed access policies, system performance, and data protection protocols across environments.
+
+Automation & Enablement: Developed notebooks to automate schema/table/volume provisioning and mentored engineers on Unity Catalog best practices.
+
+Third-party Integration Management: Managed allow lists for third-party connectors (Snowflake, MongoDB, Neo4j) to securely integrate external APIs.
+
+AFS
+Cloud Migration Lead: Architected and built the Azure Databricks and Azure Data Factory (ADF) environment from scratch to support a full on-prem to cloud migration.
+
+CI/CD with GitHub Actions: Developed CI/CD pipelines using GitHub Actions to automate deployment of Databricks notebooks and ADF ARM templates, streamlining DevOps processes.
+
+Incremental Load Solutions: Designed dual approaches for incremental ingestion — via Change Data Capture (CDC) and last modified timestamps, improving data reliability and latency.
+
+Operational Excellence: Ensured performance, scalability, and maintainability of pipelines through proper design patterns and system observability.
