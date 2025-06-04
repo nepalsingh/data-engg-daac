@@ -1,0 +1,17 @@
+Certainly! You can find the official Microsoft documentation on the Azure Databricks Managed Resource Group at the following link:
+
+Azure Databricks managed resource group
+https://learn.microsoft.com/azure/databricks/administration-guide/account-settings/managed-resource-group
+
+Overview:
+When you create an Azure Databricks workspace, Azure automatically creates a managed resource group in your subscription. This resource group contains resources required for the operation of your Databricks workspace, such as network interfaces and storage accounts.
+
+Key Points:
+
+Automatic Creation: The managed resource group is created by Azure Databricks during workspace deployment. You don't need to create it manually.
+Naming Convention: The name usually follows the pattern databricks-rg-<workspace-name>-<random-string>.
+Permissions: Ensure that the user or service principal deploying the workspace has the necessary permissions to create resources in your subscription, including the managed resource group.
+Management: Do not modify or delete resources within this group directly. These resources are managed by Azure Databricks and changes might affect the stability of your workspace.
+For more detailed information, including best practices and security considerations, please refer to the official documentation linked above.
+
+If you have any more questions or need further assistance, feel free to ask!

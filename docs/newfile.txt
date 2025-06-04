@@ -1,0 +1,22 @@
+To add Managed Identity to an Azure SQL Database, you need to follow these steps:
+
+Enable Managed Identity for the Azure resource (e.g., Azure VM, App Service):
+
+Navigate to the Azure portal.
+Go to your Azure resource (like Azure VM or App Service).
+Under Settings, select Identity.
+Turn on System-assigned managed identity and save the changes.
+Grant the Managed Identity access to the Azure SQL Database:
+
+Open SQL Server Management Studio (SSMS) or use Azure Data Studio.
+Connect to your Azure SQL Database as an administrator.
+Run the following SQL queries to create a user for the Managed Identity and assign it roles:
+sql
+Copy code
+-- Create a user for the Managed Identity
+CREATE USER [YourManagedIdentityName] FROM EXTERNAL PROVIDER;
+
+-- Grant necessary roles, e.g., db_datareader or db_datawriter
+ALTER ROLE db_datareader ADD MEMBER [YourManagedIdentityName];
+ALTER ROLE db_datawriter ADD MEMBER [YourManagedIdentityName];
+Replace YourManagedIdentityName with the actual name of the Managed Identity (e.g., the Azure resource's name or the object ID).

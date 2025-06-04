@@ -1,0 +1,6 @@
+# create databricks asset bundle
+# deploy notebooks
+
+bundle: de
+
+resources:
