@@ -1,0 +1,14 @@
+{
+  "dev": {
+    "storage_account": "agn12"
+  },
+  "prod": {
+    "storage_account": "agn12"
+  },
+  "stg": {
+    "storage_account": "agn12"
+  },
+  "test": {
+    "storage_account": "agn12"
+  }
+}
