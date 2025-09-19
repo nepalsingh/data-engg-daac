@@ -24,24 +24,55 @@ SUBJECT="ADF Trigger Run Pipeline Report"
 OUTPUT_FILE="/tmp/adf_pipeline_report.html"
 
 # Create HTML header
-cat <<EOF > "$OUTPUT_FILE"
+cat <<EOF > /tmp/adf_pipeline_report.html
+<!DOCTYPE html>
 <html>
 <head>
-<style>
-table { border-collapse: collapse; width: 100%; }
-th, td { border: 1px solid black; padding: 8px; text-align: left; }
-th { background-color: #f2f2f2; }
-</style>
+  <meta charset="UTF-8">
+  <title>ADF Trigger Run Pipeline Report</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      padding: 20px;
+    }
+    h2 {
+      font-weight: 500;
+      color: #2c3e50;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    th {
+      background-color: #007acc;
+      color: white;
+      font-weight: 500;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
 </head>
 <body>
-<h2>ADF Trigger Run Pipeline Report</h2>
-<table>
-<tr>
-<th>Pipeline Name</th>
-<th>Start (EST)</th>
-<th>End (EST)</th>
-<th>Duration</th>
-</tr>
+  <h2>ADF Trigger Run Pipeline Report</h2>
+  <table>
+    <tr>
+      <th>Pipeline Name</th>
+      <th>Start Time (EST)</th>
+      <th>End Time (EST)</th>
+      <th>Duration</th>
+    </tr>
 EOF
 
 # Generate report rows
