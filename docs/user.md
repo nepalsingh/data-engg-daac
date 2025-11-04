@@ -33,5 +33,100 @@ Steps to create a service principal using the Account Console:
    - Within the workspace, go to the service principal's profile.
   
 
-   - Click 'Generate new token' and securely store it.
-<img width="432" height="646" alt="image" src="https://github.com/user-attachments/assets/08fff6d1-2776-45dc-9f3c-ab64e6caf337" />
+ AWS Single Sign-On (SSO) Configuration Guide
+
+Overview AWS Single Sign-On (SSO), now called AWS IAM Identity Center, allows centralized access management across AWS accounts and cloud applications. Users can log in via corporate credentials managed by an external Identity Provider (IdP).
+
+Prerequisites
+
+AWS account with Administrator Access.
+
+Identity Provider (IdP) supporting SAML 2.0 (e.g., Azure AD, Okta, Google Workspace).
+
+User accounts in the IdP ready for AWS access.
+
+Browser with admin access to AWS console and IdP.
+
+Enable AWS IAM Identity Center
+
+Log in to the AWS Management Console.
+
+Navigate to IAM Identity Center.
+
+Click Enable IAM Identity Center.
+
+Select a default directory or integrate with AWS Managed Microsoft AD / AD Connector.
+
+Note the IAM Identity Center URL for SSO login (e.g., https://.awsapps.com/start).
+
+Configure Identity Source
+
+In IAM Identity Center, navigate to Settings > Identity Source.
+
+Choose External Identity Provider (SAML 2.0).
+
+Upload the IdP metadata file or provide IdP metadata URL.
+
+Save the configuration.
+
+Configure SAML Integration in IdP
+
+In your IdP (Azure AD, Okta, Google):
+
+Create a New Enterprise Application / SAML App.
+
+Set AWS SSO as the service provider.
+
+Provide the AWS SSO ACS URL and Entity ID from AWS IAM Identity Center.
+
+Configure User Attributes & Claims:
+
+username → UserName
+
+email → Email
+
+firstName → FirstName
+
+lastName → LastName
+
+Assign users or groups who need AWS access.
+
+Download IdP metadata file for AWS configuration.
+
+Assign AWS Account Access
+
+In IAM Identity Center, navigate to AWS Accounts > Assign Users.
+
+Select the AWS accounts and permission sets to assign.
+
+Create a Permission Set (predefined or custom):
+
+Example: AdministratorAccess, PowerUserAccess, ReadOnlyAccess.
+
+Map it to the appropriate groups or users from IdP.
+
+Test SSO Login
+
+Open the AWS SSO URL in a browser.
+
+Sign in using IdP credentials.
+
+Verify that the user can see assigned AWS accounts and assume the correct permission set.
+
+Optional: Enable Auditing & Logging
+
+Enable AWS CloudTrail to track SSO login events.
+
+Monitor user activity for compliance and security.
+
+Troubleshooting Tips
+
+Ensure time synchronization between IdP and AWS.
+
+Check SAML attribute mappings if users cannot access AWS accounts.
+
+Verify that permission sets are correctly assigned.
+
+Review IdP metadata for expired certificates.
+
+
