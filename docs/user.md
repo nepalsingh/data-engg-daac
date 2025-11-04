@@ -65,3 +65,38 @@ Set the Redirect URI as provided by Databricks.
 Choose Provisioning Method: SCIM (for user/group sync).
 
 Save configuration.
+
+--------
+
+Generate SCIM API Token in Databricks
+
+In Databricks workspace, go to User Settings > Access Tokens.
+
+Click Generate New Token, name it (e.g., OIDC_SCIM_Token), set expiration.
+
+Copy and securely store the token.
+
+5. Configure SCIM in Identity Provider
+Azure AD (OIDC + SCIM)
+
+In Azure AD, create a new enterprise application.
+
+Set Single Sign-On method to OpenID Connect (OIDC).
+
+Provide Client ID, Client Secret, and Redirect URI from Databricks.
+
+Navigate to Provisioning > Automatic:
+
+Enter SCIM endpoint URL from Databricks
+
+Enter SCIM API token
+
+Test connection and enable provisioning
+
+Map attributes for users and groups:
+
+userName → userPrincipalName
+
+displayName → displayName
+
+groups → memberOf
