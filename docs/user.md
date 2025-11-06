@@ -100,3 +100,18 @@ userName → userPrincipalName
 displayName → displayName
 
 groups → memberOf
+
+
+
+
+Driver=Databricks ODBC Driver;
+Host=adb-1234567890123456.9.databricks.amazonaws.com;
+Port=443;
+HTTPPath=/sql/1.0/warehouses/abcd1234efgh5678;
+AuthMech=3;
+UID=token;
+PWD=dapiXXXXXXXXXXXXXXXX;
+SSL=1;
+ThriftTransport=2;
+SparkServerType=3;
+
