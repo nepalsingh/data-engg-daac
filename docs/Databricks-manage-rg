@@ -37,3 +37,46 @@ az login --service-principal \
 # Verify login
 az account show
 ```
+
+```
+# List all private endpoints for a storage account
+az network private-endpoint list \
+  --resource-group <RESOURCE_GROUP> \
+  --query "[? privateLinkServiceConnections[0].privateLinkServiceId==\
+'/subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.Storage/storageAccounts/<STORAGE_ACCOUNT_NAME>']" \
+  --output table
+
+# Alternative: Check by storage account directly
+az network private-endpoint-connection list \
+  --name <STORAGE_ACCOUNT_NAME> \
+  --resource-group <RESOURCE_GROUP> \
+  --type Microsoft.Storage/storageAccounts \
+  --output table
+
+# Show all private endpoints in resource group
+az network private-endpoint list \
+  --resource-group <RESOURCE_GROUP> \
+  --output table
+
+# Get detailed info for specific private endpoint
+az network private-endpoint show \
+  --name <PRIVATE_ENDPOINT_NAME> \
+  --resource-group <RESOURCE_GROUP> \
+  --output json
+
+# Check connection state for storage account
+az storage account private-endpoint-connection list \
+  --account-name <STORAGE_ACCOUNT_NAME> \
+  --resource-group <RESOURCE_GROUP> \
+  --output table
+
+# Show detailed connection info
+az storage account private-endpoint-connection show \
+  --account-name <STORAGE_ACCOUNT_NAME> \
+  --name <CONNECTION_NAME> \
+  --resource-group <RESOURCE_GROUP>
+
+
+```
+
+
