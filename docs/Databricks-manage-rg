@@ -79,4 +79,13 @@ az storage account private-endpoint-connection show \
 
 ```
 
+```
+foreach ($file in Get-ChildItem cert-*.crt) {
+    $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2($file.FullName)
+    Write-Host "`n$file"
+    Write-Host " Subject: $($cert.Subject)"
+    Write-Host " Issuer : $($cert.Issuer)"
+    Write-Host " CA     : $($cert.Extensions | Where-Object { $_.Oid.FriendlyName -eq 'Basic Constraints' })"
+}
 
+```
