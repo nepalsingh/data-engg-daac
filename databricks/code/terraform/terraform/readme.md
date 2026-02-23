@@ -160,3 +160,21 @@ output "rotated_secrets" {
 
 zip rotation.zip rotation.py
 ```
+
+```
+resource "aws_iam_role" "rotation_role" {
+  name = "${var.secret_name}-rotation-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect = "Allow"
+      Principal = {
+        Service = "lambda.amazonaws.com"
+      }
+      Action = "sts:AssumeRole"
+    }]
+  })
+}
+
+```
