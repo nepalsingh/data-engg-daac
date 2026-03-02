@@ -34,3 +34,16 @@ print("All CSV files processed successfully.")
 
 
 ```
+
+```
+schema = "sales"
+
+tables = spark.sql(f"SHOW TABLES IN hive_metastore.{schema}").collect()
+
+for t in tables:
+    table_name = t.tableName
+    ddl = spark.sql(f"SHOW CREATE TABLE hive_metastore.{schema}.{table_name}").collect()[0][0]
+    print(f"\n-- DDL for {table_name}\n")
+    print(ddl)
+
+```
